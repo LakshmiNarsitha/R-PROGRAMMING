@@ -1,0 +1,26 @@
+print("enter before values :")
+d1 <- scan()
+print("enter after values :")
+d2 <- scan()
+print("enter alpha value :")
+alpha <- scan()
+n=length(d)
+d <- d1-d2
+dbar <- mean(d)
+sd <- sd(d)
+sprintf("mean is %f",dbar)
+sprintf("sd is %f",sd)
+t <- t.test(d1,d2,paired=TRUE)
+print(t)
+print("Table value for two-tailed test:")
+tablevalue<-qt(1-alpha/2, df=n-1)
+print(round(tablevalue,digits=3))
+print("Table value for one-tailed test:")
+tablevalue<-qt(1-alpha, df=n-1)
+print(round(tablevalue,digits=3))
+print(t[1][1])
+if(t[1][1]<tablevalue) {
+  print("accepted")
+} else {
+  print("rejected")
+}
