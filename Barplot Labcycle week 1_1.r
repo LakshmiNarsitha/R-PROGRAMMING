@@ -1,0 +1,16 @@
+print("enter age of students")
+age <- scan()
+print("enter rank of students")
+rank <- scan()
+print("enter grade of students")
+grade <- scan()
+names=c("Aasritha","Dhairya","Dhatri","Yukti","Swetha","Pallavi","Smita","Medha","yasaswini","Vasudha")
+d <- data.frame(age,rank,grade,names)
+d
+write.csv(d,"students data.csv")
+a <- read.csv("students data.csv")
+a
+barplot(a$age)
+barplot(a$age,xlab="names of students",ylab="age",main="students names and age",names.arg=names,border="black",col=rainbow(length(age)),las=2,density=300,ylim=c(0,50))
+barplot(a$rank,xlab="names of students",ylab="rank",main="students names and rank",names.arg=names,border="pink",col=rainbow(length(age)),las=2,density=300,ylim=c(0,50))
+barplot(a$age,xlab="names of students",ylab="grade",main="students names and grade",names.arg=names,border="yellow",col=rainbow(length(age)),las=2,density=300,ylim=c(0,50))
