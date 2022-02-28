@@ -21,10 +21,10 @@ print(result)
 calvalue <- result$statistic
 sprintf("caluculated value is : %f",calvalue)
 tablevalue <- qchisq(.95,df=s)
-print(tablevalue)
+sprintf("table value is : %f",tablevalue)
 if(calvalue<tablevalue) {
-  print("accept")
+  print("accept null hypothesis")
 } else {
-  print("reject")
+  print("reject null hypothesis")
 }
 
