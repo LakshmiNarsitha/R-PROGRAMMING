@@ -1,0 +1,27 @@
+print("enter data 1 :")
+d1 <- scan()
+print("enter data 2:")
+d2 <- scan()
+print("enter alpha value")
+alpha <- scan()
+n1=length(d1)
+n2=length(d2)
+m1=mean(d1)
+m2=mean(d2)
+s1=sd(d1)
+s2=sd(d2)
+vp=(((n1-1)*s1*s1)+((n2-1)*s2*s2))/(n1+n2-2)
+sp=sqrt(vp)
+sp=round(sp,3)
+t <- t.test(d1,d2)
+#print(t)
+tablevalue<-qt(1-alpha/2, df=n1+n2-2)
+sprintf("table value is : %f",tablevalue)
+#tablevalue<-qt(1-alpha, df=n1+n2-2)
+calvalue=t[1][1]
+sprintf("calculated value is : %f",calvalue)
+if(calvalue<tablevalue) {
+  print("accept null hypothesis")
+} else {
+  print("reject null hypothesis")
+}
