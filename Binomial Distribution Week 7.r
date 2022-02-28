@@ -13,7 +13,6 @@ fre <-  sumf*pr
 fre <- round(fre,digits=2)
 fe <- round(fre,digits=0)
 d <- data.frame(x,f,fx,pr,fre,fe)
-print(d)
 l <- c(NA,sumf,sumfx,NA,NA,sum(fe))
 mydata <- rbind(d,l)
 print(mydata)
